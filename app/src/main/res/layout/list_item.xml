@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:descendantFocusability="blocksDescendants"
+    android:padding="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:src="@drawable/icon"
+            android:id="@+id/ivThumb"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:textSize="15dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="lelelala.apk"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@id/ivThumb"
+            android:id="@+id/tvFileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="10dp"
+            android:text="28-05-2018"
+            android:layout_below="@id/tvFileName"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@id/ivThumb"
+            android:id="@+id/tvFileCreatedDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

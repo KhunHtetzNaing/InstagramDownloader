@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/help"
+            android:icon="@drawable/help"
+            android:title="Help" />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/info"
+            android:title="About" />
+        <item
+            android:id="@+id/update"
+            android:icon="@drawable/update"
+            android:title="Check Update" />
+        <item
+            android:id="@+id/more"
+            android:icon="@drawable/more"
+            android:title="More Apps" />
+        <item
+            android:id="@+id/rate"
+            android:icon="@drawable/rate"
+            android:title="Rate This App" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/share"
+                android:icon="@drawable/share"
+                android:title="Share" />
+            <item
+                android:id="@+id/feedback"
+                android:icon="@drawable/feedback"
+                android:title="Send Feedback" />
+        </menu>
+    </item>
+
+    <item android:title="Advertising">
+        <menu>
+            <item
+                android:id="@+id/ad"
+                android:icon="@drawable/ad"
+                android:title="Ads" />
+        </menu>
+    </item>
+
+</menu>

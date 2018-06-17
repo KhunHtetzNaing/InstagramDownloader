@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="#2980b9"
+        android:layout_below="@id/iv"
+        android:id="@+id/tvAppInfo"
+        android:textSize="17sp"
+        android:text="About Application"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_below="@id/tvAppInfo"
+        android:text="App Name : Facebook Toolbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Version : 1.0"
+        android:id="@+id/tvVersion"
+        android:layout_below="@id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Release : 13/06/2018"
+        android:layout_below="@id/tvVersion"
+        android:id="@+id/tvRelease"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="#2980b9"
+        android:layout_below="@id/tvRelease"
+        android:id="@+id/tvDevInfo"
+        android:textSize="17sp"
+        android:text="About Developer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvWebDev"
+        android:layout_below="@id/tvDevInfo"
+        android:text="Idea | Design : Boykhai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_below="@id/tvWebDev"
+        android:id="@+id/AndroidDev"
+        android:text="Android Application : Khun Htetz Naing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    </RelativeLayout>
+</ScrollView>

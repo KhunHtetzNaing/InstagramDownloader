@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:padding="16dp"
+    android:layout_height="match_parent">
+
+        <Button
+            android:textColor="#fff"
+            android:background="@drawable/btn_bg"
+            android:id="@+id/btnDownload"
+            android:text="Download Now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:layout_below="@id/btnDownload"
+            android:id="@+id/fl_adplaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:layout_below="@id/btnDownload"
+        android:id="@+id/iv"
+        android:src="@drawable/icon"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>
