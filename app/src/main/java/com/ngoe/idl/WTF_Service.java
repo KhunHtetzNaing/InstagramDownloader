@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.ngoe.idl.UI.myDialog;
+
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
 public class WTF_Service extends Service {
     @Nullable
     @Override
@@ -21,6 +25,7 @@ public class WTF_Service extends Service {
                 if (clipboardManager.getText().toString().startsWith("https://www.instagram.com")) {
                     Intent intent = new Intent(getApplicationContext(), myDialog.class);
                     intent.putExtra("url",clipboardManager.getText().toString());
+                    intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }
             }

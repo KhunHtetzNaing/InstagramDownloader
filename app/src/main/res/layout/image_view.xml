@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="@drawable/side_nav_bar"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/li"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/start"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageView
+            android:src="@drawable/start"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageView
+            android:src="@drawable/start"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageView
+            android:src="@drawable/start"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageView
+            android:src="@drawable/start"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:id="@+id/tv"
+        android:textColor="#fff"
+        android:text="ဒီဆော့ဝဲကို ကြယ်ငါးလုံးပေးပြီး အဆင်ပြေမှုရှိ/မရှိ အကြံပေးကြပါနော်။"
+        android:layout_below="@id/li"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

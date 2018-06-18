@@ -72,7 +72,7 @@ public class ShowActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(photo)
                 .asBitmap()
-                .error(R.drawable.rateme)
+                .error(R.drawable.empty_image)
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .into(mImageView);
     }

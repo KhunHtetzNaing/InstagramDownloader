@@ -38,7 +38,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Feedback"
+            android:name=".UI.Feedback"
             android:label="Feedback" />
 
         <service
@@ -47,7 +47,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".myDialog"
+            android:name=".UI.myDialog"
             android:theme="@style/URTransparent" />
         <activity
             android:name=".Gallery.GalleryActivity"

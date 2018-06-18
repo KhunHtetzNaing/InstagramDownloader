@@ -158,7 +158,7 @@ public class CheckUpdate {
                                         .setPositiveButton("Direct", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialogInterface, int i) {
-                                                dlFile(direct,"downloadGram_"+version+".apk");
+                                                dlFile(direct,"InstagramDownloader_"+version+".apk");
                                                 showADS();
                                             }
                                         })

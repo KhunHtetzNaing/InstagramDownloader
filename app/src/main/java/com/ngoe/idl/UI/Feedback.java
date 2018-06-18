@@ -1,4 +1,4 @@
-package com.ngoe.idl;
+package com.ngoe.idl.UI;
 
 import android.content.DialogInterface;
 import android.net.ConnectivityManager;
@@ -12,6 +12,8 @@ import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.ngoe.idl.R;
 
 public class Feedback extends AppCompatActivity {
     WebView webView;

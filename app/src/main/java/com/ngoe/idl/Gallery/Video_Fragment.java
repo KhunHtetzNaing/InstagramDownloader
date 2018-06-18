@@ -32,7 +32,7 @@ TextView textView;
     public void onStart() {
         super.onStart();
         ArrayList<String> mPhotos = new ArrayList<>();
-        File file = new File(Environment.getExternalStorageDirectory()+"/DownloadGram/");
+        File file = new File(Environment.getExternalStorageDirectory()+"/InstagramDownload/");
         File [] files = file.listFiles();
         try {
             Arrays.sort(files, new Comparator() {

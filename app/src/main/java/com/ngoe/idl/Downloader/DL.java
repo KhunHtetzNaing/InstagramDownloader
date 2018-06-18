@@ -18,6 +18,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ngoe.idl.Gallery.GalleryActivity;
@@ -55,7 +56,7 @@ public class DL {
 
     public void dlFile(String url, String fileName){
         try {
-            String mBaseFolderPath = Environment.getExternalStorageDirectory()+"/DownloadGram/";
+            String mBaseFolderPath = Environment.getExternalStorageDirectory()+"/InstagramDownload/";
             if (!new File(mBaseFolderPath).exists()) {
                 new File(mBaseFolderPath).mkdir();
             }
@@ -115,10 +116,11 @@ public class DL {
     };
 
     public void rate(){
-        ImageView imageView = new ImageView(activity);
-        imageView.setPadding(5,0,5,0);
-        imageView.setImageResource(R.drawable.rateme);
-        imageView.setOnClickListener(new View.OnClickListener() {
+        View view = activity.getLayoutInflater().inflate(R.layout.image_view,null);
+        TextView tv = view.findViewById(R.id.tv);
+        tv.setText("ဒီေဆာ့ဝဲကို ၾကယ္ငါးလုံးေပးၿပီး\n" +
+                "အဆင္ေျပမႈရွိ/မရွိ အႀကံေပးၾကပါေနာ္။");
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final String appPackageName = activity.getPackageName(); // getPackageName() from Context or Activity object
@@ -131,7 +133,7 @@ public class DL {
         });
         AlertDialog.Builder builder = new AlertDialog.Builder(activity)
                 .setTitle("ံHelp Us")
-                .setView(imageView)
+                .setView(view)
                 .setCancelable(false)
                 .setPositiveButton("Rate Now", new DialogInterface.OnClickListener() {
                     @Override

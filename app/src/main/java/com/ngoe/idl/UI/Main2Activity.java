@@ -1,8 +1,8 @@
 package com.ngoe.idl.UI;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -33,6 +33,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,7 +48,6 @@ import com.ngoe.idl.Ads.AdsActivity;
 import com.ngoe.idl.CheckInternet;
 import com.ngoe.idl.CheckUpdate;
 import com.ngoe.idl.Downloader.DL;
-import com.ngoe.idl.Feedback;
 import com.ngoe.idl.Gallery.GalleryActivity;
 
 import org.json.JSONArray;
@@ -55,6 +55,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -114,7 +115,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         startService(new Intent(this,WTF_Service.class).setAction("startforeground"));
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         editor = sharedPreferences.edit();
-        downloadPath = Environment.getExternalStorageDirectory()+"/DownloadGram/";
+        downloadPath = Environment.getExternalStorageDirectory()+"/InstagramDownload/";
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
@@ -176,7 +177,9 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             case R.id.instagram:
                 String insta = "com.instagram.android";
                 try{
-                    startActivity(getPackageManager().getLaunchIntentForPackage(insta));
+                    Intent intent = getPackageManager().getLaunchIntentForPackage(insta);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 }catch (Exception e){
                     try {
                         startActivityForResult(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + insta)),showAds_code);
@@ -360,6 +363,10 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                     (new String[listPermissionsNeeded.size()]), 5217);
             return false;
         }
+        File n = new File(downloadPath);
+        if (!n.exists()){
+            n.mkdirs();
+        }
         return true;
     }
 
@@ -369,6 +376,10 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             case 5217: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    File n = new File(downloadPath);
+                    if (!n.exists()){
+                        n.mkdirs();
+                    }
                 } else {
                     checkPermissions();
                     Toast.makeText(this, "You need to Allow Write Storage Permission!", Toast.LENGTH_SHORT).show();
@@ -446,10 +457,11 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
     }
 
     public void rate(){
-        ImageView imageView = new ImageView(this);
-        imageView.setPadding(5,0,5,0);
-        imageView.setImageResource(R.drawable.rateme);
-        imageView.setOnClickListener(new View.OnClickListener() {
+        View view = getLayoutInflater().inflate(R.layout.image_view,null);
+        TextView tv = view.findViewById(R.id.tv);
+        tv.setText("ဒီေဆာ့ဝဲကို ၾကယ္ငါးလုံးေပးၿပီး\n" +
+                "အဆင္ေျပမႈရွိ/မရွိ အႀကံေပးၾကပါေနာ္။");
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
@@ -462,7 +474,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         });
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setTitle("ံHelp Us")
-                .setView(imageView)
+                .setView(view)
                 .setCancelable(false)
                 .setPositiveButton("Rate Now", new DialogInterface.OnClickListener() {
                     @Override
@@ -573,7 +585,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
     private void share() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT,"All in One Instagram Downloader\nDownload at Google Play Store : play.google.com/store/apps/details?id="+getPackageName()+"\n\nDirect Download : http://bit.ly/2FLfqG8\n#mediaSave For Instagram");
+        intent.putExtra(Intent.EXTRA_TEXT,"All in One Photos & Videos Downloader For Instagram!\n\nDownload at Google Play Store : play.google.com/store/apps/details?id="+getPackageName()+"\n\nDirect Download : http://bit.ly/2LW400T\n#DownloaderForInstagram #InstagramDownloader");
         startActivityForResult(Intent.createChooser(intent,"Share App..."),showAds_code);
     }
 

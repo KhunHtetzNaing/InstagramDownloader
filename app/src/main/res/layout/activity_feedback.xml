@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".Feedback">
+    tools:context=".UI.Feedback">
 
         <WebView
             android:scrollbars="none"

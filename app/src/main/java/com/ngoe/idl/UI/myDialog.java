@@ -1,4 +1,4 @@
-package com.ngoe.idl;
+package com.ngoe.idl.UI;
 
 import android.Manifest;
 import android.content.DialogInterface;
@@ -30,8 +30,9 @@ import com.google.android.gms.ads.formats.NativeAd;
 import com.google.android.gms.ads.formats.NativeAdOptions;
 import com.google.android.gms.ads.formats.UnifiedNativeAd;
 import com.google.android.gms.ads.formats.UnifiedNativeAdView;
-import com.ngoe.idl.Ads.AdsActivity;
+import com.ngoe.idl.CheckInternet;
 import com.ngoe.idl.Downloader.DL;
+import com.ngoe.idl.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
