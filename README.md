@@ -20,6 +20,6 @@ Downloader For Instagram allows you to download Instagram photos & videos in HD 
 2.Then open Instagram to download.
 3. Click on “three dot” option. Select"Copy Link" of photos or videos.
 4. Click on "Download Now" Button to download.
-5. ‎Finish!!
+5. Finish!!
 
 Download APK Here => http://bit.ly/2ylHigT <=
